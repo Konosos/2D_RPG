@@ -8,13 +8,12 @@ public class PlayerInformation : Information
     public int healthTotal;
     public int atkTotal;
 
-    private PlayerController playerControl;
+    [SerializeField]private PlayerController playerControl;
 
     protected override void Start()
     {
         base.Start();
-        playerControl=GetComponent<PlayerController>();
-        UpdateInfor();
+
     }
     protected override void Die()
     {

@@ -245,6 +245,7 @@ MonoBehaviour:
   detectPlayer: 0
   canAttack: 0
   isAttack: 0
+  enemyID: 1
 --- !u!114 &1991336018769201290
 MonoBehaviour:
   m_ObjectHideFlags: 0

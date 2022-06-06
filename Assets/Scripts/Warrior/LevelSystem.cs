@@ -17,14 +17,6 @@ public class LevelSystem : MonoBehaviour
         playerControl.playerUI.UpdateLevel(cur_Level);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyUp(KeyCode.O))
-        {
-            AddExp(200);
-        }
-    }
     public void AddExp(int _exp)
     {
         cur_Exp+=_exp;

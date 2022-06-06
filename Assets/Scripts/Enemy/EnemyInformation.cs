@@ -8,7 +8,7 @@ public class EnemyInformation : Information
     public bool detectPlayer=false;
     public bool canAttack=false;
     public bool isAttack=false;
-    
+    public int enemyID;
 
     protected override void Die()
     {

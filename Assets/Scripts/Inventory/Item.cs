@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Item 
 {
     public enum ItemType{Gold,HealthPotion,ManaPotion,ExpBook,
@@ -10,7 +11,7 @@ public class Item
     public ItemType itemType;
     public int amount;
     public int typeInt;
-    public bool wasEquiped=false;
+    public int price;
     
     public void SetItemType()
     {
@@ -31,6 +32,27 @@ public class Item
             case (int)ItemType.IronSword:       itemType=ItemType.IronSword;break;
             case (int)ItemType.SilverSword:     itemType=ItemType.SilverSword;break;
             case (int)ItemType.GoldenSword:     itemType=ItemType.GoldenSword;break;
+        }
+    }
+    public int GetPrice()
+    {
+        switch(typeInt)
+        {
+            default:
+            case (int)ItemType.Gold:            return 10;
+            case (int)ItemType.HealthPotion:    return 20;
+            case (int)ItemType.ManaPotion:      return 20;
+            case (int)ItemType.ExpBook:         return 30;
+            case (int)ItemType.LeatherArmor:    return 200;
+            case (int)ItemType.LeatherBoot:     return 200;
+            case (int)ItemType.LeatherHelmet:   return 200;
+            case (int)ItemType.IronArmor:       return 400;
+            case (int)ItemType.IronBoot:        return 400;
+            case (int)ItemType.IronHelmet:      return 400;
+            case (int)ItemType.WoodenSword:     return 100;
+            case (int)ItemType.IronSword:       return 200;
+            case (int)ItemType.SilverSword:     return 400;
+            case (int)ItemType.GoldenSword:     return 600;
         }
     }
     public Sprite GetSprite()

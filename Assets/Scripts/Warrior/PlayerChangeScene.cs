@@ -11,13 +11,14 @@ public class PlayerChangeScene : MonoBehaviour
     private void Awake()
     {
         playerControl=GetComponent<PlayerController>();
+        LoadData();
     }
     // Start is called before the first frame update
     void Start()
     {
-        LoadData();
         
     }
+
     private void LoadData()
     {
         if(PlayerPrefs.GetString("Json")!="")
@@ -32,6 +33,7 @@ public class PlayerChangeScene : MonoBehaviour
             playerControl.levelSystem.cur_Exp=data.save_CurExp;
             playerControl.playerInventory.typeItemList=data.saveTypeItem;
             playerControl.playerInventory.amountList=data.saveAmount;
+            playerControl.playerInventory.coins=data.save_Coins;
             playerControl.playerEquip.equipItemTypes=data.saveEquipType;
         }
     }
@@ -63,6 +65,7 @@ public class PlayerChangeScene : MonoBehaviour
         playerControl.playerInventory.SaveList();
         data.saveTypeItem=playerControl.playerInventory.typeItemList;
         data.saveAmount=playerControl.playerInventory.amountList;
+        data.save_Coins=playerControl.playerInventory.coins;
         playerControl.playerEquip.SaveEquipList();
         data.saveEquipType=playerControl.playerEquip.equipItemTypes;
         string json=JsonUtility.ToJson(data,true);

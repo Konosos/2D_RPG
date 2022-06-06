@@ -11,30 +11,23 @@ public class PlayerEquipSystem : MonoBehaviour
     [SerializeField]private GameObject slot;
     [SerializeField]private Transform panel;
     
-    public int hpBonus;
-    public int atkBonus;
+    public int hpBonus=0;
+    public int atkBonus=0;
 
-    private PlayerController playerControl;
+    [SerializeField]private PlayerController playerControl;
 
     private void Start()
     {
-        playerControl=GetComponent<PlayerController>();
-        Invoke("LoadEquipList",0.5f);
-        Invoke("UpdateEquipInfor",0.6f);
+
+        LoadEquipList();
+        UpdateEquipInfor();
     }
     public void SaveEquipList()
     {
         equipItemTypes=new int[4];
         for(int i=0;i<equipItem.Length;i++)
         {
-            if(equipItem[i]!=null)
-            {
-                equipItemTypes[i]=equipItem[i].typeInt;
-            }
-            else
-            {
-                equipItemTypes[i]=-1;
-            }
+            equipItemTypes[i]=equipItem[i].typeInt;
         }
     }
     public void LoadEquipList()
@@ -42,22 +35,11 @@ public class PlayerEquipSystem : MonoBehaviour
         equipItem= new Item[4];
         for(int i=0;i<equipItemTypes.Length;i++)
         {
-            if(equipItemTypes[i]!=-1)
-            {
-                equipItem[i]=new Item{typeInt=equipItemTypes[i],amount=1};
-            }
-            else
-            {
-                equipItem[i]=null;
-            }
+            equipItem[i]=new Item{typeInt=equipItemTypes[i],amount=1};
         }
         for(int i=0;i<equipItem.Length;i++)
         {
-            //Debug.Log(equipItem[i]);
-            if(equipItem[i]!=null)
-            {
-                equipItem[i].SetItemType();
-            }
+            equipItem[i].SetItemType();
         }
         
     }
@@ -67,9 +49,10 @@ public class PlayerEquipSystem : MonoBehaviour
         atkBonus=0;
         foreach(Item equip in equipItem)
         {
-            if(equip!=null)
+            EquipmentInfor equipScr=equip.GetItemObject().GetComponent<EquipmentInfor>();
+            if(equipScr!=null)
             {
-                EquipmentInfor equipScr=equip.GetItemObject().GetComponent<EquipmentInfor>();
+                
                 hpBonus+= equipScr.hp;
                 atkBonus+=equipScr.atk;
             }
@@ -88,7 +71,7 @@ public class PlayerEquipSystem : MonoBehaviour
         float sizeY=65f;
         foreach(Item item in equipItem)
         {
-            if(item!=null)
+            if(item.typeInt!=0)
             {
                 RectTransform slots=Instantiate(slot as GameObject).GetComponent<RectTransform>();
                 slots.gameObject.transform.SetParent(panel);
@@ -110,7 +93,6 @@ public class PlayerEquipSystem : MonoBehaviour
         {
             if(equipItem[i]==_item)
             {
-                equipItem[i].wasEquiped=false;
                 playerControl.playerInventory.AddItemToList(equipItem[i]);
                 equipItem[i]=null;
             }
@@ -124,7 +106,6 @@ public class PlayerEquipSystem : MonoBehaviour
         {
             if(equipItem[i]==_item)
             {
-                equipItem[i].wasEquiped=false;
                 playerControl.playerInventory.DropItem(equipItem[i]);
                 equipItem[i]=null;
             }

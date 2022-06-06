@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 820673061}
   - component: {fileID: 235193726}
   - component: {fileID: 1735775668}
+  - component: {fileID: 393942714}
   m_Layer: 8
   m_Name: Warrior
   m_TagString: Player
@@ -266,14 +267,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f3206ccf499d0a4f97e16d1f49096b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMovement: {fileID: 0}
-  playerAnimation: {fileID: 0}
-  playerAttack: {fileID: 0}
-  playerInfor: {fileID: 0}
-  playerInventory: {fileID: 0}
-  levelSystem: {fileID: 0}
-  playerUI: {fileID: 0}
-  playerEquip: {fileID: 0}
+  playerMovement: {fileID: 1897507050719886475}
+  playerAnimation: {fileID: 1897507050719886476}
+  playerAttack: {fileID: 1897507050719886478}
+  playerInfor: {fileID: 1897507050719886479}
+  playerInventory: {fileID: 768428730}
+  levelSystem: {fileID: 497795742}
+  playerUI: {fileID: 820673061}
+  playerEquip: {fileID: 235193726}
+  npc_Dialogue: {fileID: 393942714}
 --- !u!114 &1897507050719886475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,6 +352,7 @@ MonoBehaviour:
   timeHurt: 0.6
   healthTotal: 0
   atkTotal: 0
+  playerControl: {fileID: 1897507050719886477}
 --- !u!114 &768428730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,10 +365,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4f8188f670b6e46b59807524afc034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemList: []
   amountList: 
   typeItemList: 
   slot: {fileID: 4668099826863855156, guid: 56b6d6358292d7545ae9ea08df8828ee, type: 3}
   panel: {fileID: 0}
+  coins: 1000
   dropPos: {fileID: 1110436851}
 --- !u!114 &497795742
 MonoBehaviour:
@@ -395,11 +400,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelText: {fileID: 0}
+  coinText: {fileID: 0}
+  m_Panel: {fileID: 0}
   itemInforPanel: {fileID: 0}
   equipStatPanel: {fileID: 0}
   inventoryUI: {fileID: 0}
   invenPanel: {fileID: 0}
   equipPanel: {fileID: 0}
+  equit_inven: {fileID: 0}
+  buy_sell: {fileID: 0}
   itemImage: {fileID: 0}
   itemName: {fileID: 0}
   capText: {fileID: 0}
@@ -409,10 +418,13 @@ MonoBehaviour:
   hpCharInfor: {fileID: 0}
   atkCharInfor: {fileID: 0}
   expCharInfor: {fileID: 0}
+  priceText: {fileID: 0}
   useBut: {fileID: 0}
-  dropBut: {fileID: 0}
-  removeBut: {fileID: 0}
-  equipDropBut: {fileID: 0}
+  buyBut: {fileID: 0}
+  sellBut: {fileID: 0}
+  use_drop: {fileID: 0}
+  remove_drop: {fileID: 0}
+  shopButPan: {fileID: 0}
 --- !u!114 &235193726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,11 +437,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb7521eaa64d8624c91e9a00a1a12633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipItem:
+  - itemType: 0
+    amount: 0
+    typeInt: 0
+    price: 0
+  - itemType: 0
+    amount: 0
+    typeInt: 0
+    price: 0
+  - itemType: 0
+    amount: 0
+    typeInt: 0
+    price: 0
+  - itemType: 0
+    amount: 0
+    typeInt: 0
+    price: 0
   equipItemTypes: ffffffffffffffffffffffffffffffff
-  slot: {fileID: 0}
+  slot: {fileID: 4668099826863855156, guid: 56b6d6358292d7545ae9ea08df8828ee, type: 3}
   panel: {fileID: 0}
   hpBonus: 0
   atkBonus: 0
+  playerControl: {fileID: 1897507050719886477}
 --- !u!114 &1735775668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,3 +472,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25acddb706c9f1d4b8d6c803f13a2668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &393942714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897507050719886469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f5791eabfba3b47a86776b0cf03e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookRange: 1.5
+  npcLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  npcCtrl: {fileID: 0}

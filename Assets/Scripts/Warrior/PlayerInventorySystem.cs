@@ -10,17 +10,12 @@ public class PlayerInventorySystem : MonoBehaviour
     public List<Item> itemList;
     public List<int> amountList;
     public List<int> typeItemList;
-    [SerializeField]private GameObject slot;
-    [SerializeField]private Transform panel;
+    public GameObject slot;
+    public Transform panel;
+
+    public int coins=1000;
     [SerializeField]private Transform dropPos;
     
-    private void Awake()
-    {
-        itemList=new List<Item>();
-        AddItemToList(new Item{itemType=Item.ItemType.Gold, amount=10, typeInt=0});
-        AddItemToList(new Item{itemType=Item.ItemType.HealthPotion, amount=1, typeInt=1});
-        
-    }
     private void Start()
     {
         playerControl=GetComponent<PlayerController>();
@@ -86,10 +81,12 @@ public class PlayerInventorySystem : MonoBehaviour
         {
             itemList.Add(item);
         }
+        playerControl.npc_Dialogue.UpdateGatheringAmount();
     }
     public void RemoveItem(Item item)
     {
         item.amount-=1;
+        playerControl.npc_Dialogue.UpdateGatheringAmount();
         if(item.amount<=0)
         {
             itemList.Remove(item);
@@ -100,9 +97,9 @@ public class PlayerInventorySystem : MonoBehaviour
     {
         return itemList;
     }
-    public void RefreshSlot()
+    public void RefreshSlot(List<Item> _listItem,Transform _panel)
     {
-        foreach(Transform child in panel)
+        foreach(Transform child in _panel)
         {
             Destroy(child.gameObject);
         }
@@ -111,10 +108,10 @@ public class PlayerInventorySystem : MonoBehaviour
         int y=0;
         float sizeX=65f;
         float sizeY=65f;
-        foreach(Item item in GetItemList())
+        foreach(Item item in _listItem)
         {
             RectTransform slots=Instantiate(slot as GameObject).GetComponent<RectTransform>();
-            slots.gameObject.transform.SetParent(panel);
+            slots.gameObject.transform.SetParent(_panel);
             slots.localScale=new Vector3(1,1,1);
             slots.anchoredPosition=new Vector3(-165+x*sizeX,152-y*sizeY,0);
             slots.gameObject.GetComponent<SlotCell>().SetItem(item);
@@ -141,7 +138,7 @@ public class PlayerInventorySystem : MonoBehaviour
     public void RemoveOneItem(Item _item)
     {
         RemoveItem(_item);
-        RefreshSlot();
+        RefreshSlot(GetItemList(),panel);
     }
     public void DropItem(Item _item)
     {
@@ -151,11 +148,9 @@ public class PlayerInventorySystem : MonoBehaviour
     {
         if(playerControl.playerEquip.equipItem[_visit]!=null)
         {
-            playerControl.playerEquip.equipItem[_visit].wasEquiped=false;
             AddItemToList(playerControl.playerEquip.equipItem[_visit]);
         }
         playerControl.playerEquip.equipItem[_visit]=_item;
-        playerControl.playerEquip.equipItem[_visit].wasEquiped=true;
         RemoveOneItem(_item);
     }
 }

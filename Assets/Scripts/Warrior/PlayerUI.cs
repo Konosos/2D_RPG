@@ -10,13 +10,16 @@ public class PlayerUI : MonoBehaviour
     private Item item;
     private bool bagOpen=false;
 
-
     [SerializeField]private TMP_Text levelText;
+    [SerializeField]private TMP_Text coinText;
+    [SerializeField]private Transform m_Panel;
     [SerializeField]private GameObject itemInforPanel;
     [SerializeField]private GameObject equipStatPanel;
     [SerializeField]private GameObject inventoryUI;
     [SerializeField]private GameObject invenPanel;
     [SerializeField]private GameObject equipPanel;
+    [SerializeField]private GameObject equit_inven;
+    [SerializeField]private GameObject buy_sell;
     [SerializeField]private Image itemImage;
     [SerializeField]private Text itemName;
     [SerializeField]private Text capText;
@@ -26,10 +29,13 @@ public class PlayerUI : MonoBehaviour
     [SerializeField]private Text hpCharInfor;
     [SerializeField]private Text atkCharInfor;
     [SerializeField]private Text expCharInfor;
+    [SerializeField]private Text priceText;
     [SerializeField]private Button useBut;
-    [SerializeField]private Button dropBut;
-    [SerializeField]private Button removeBut;
-    [SerializeField]private Button equipDropBut;
+    [SerializeField]private Button buyBut;
+    [SerializeField]private Button sellBut;
+    [SerializeField]private GameObject use_drop;
+    [SerializeField]private GameObject remove_drop;
+    [SerializeField]private GameObject shopButPan;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,24 +53,70 @@ public class PlayerUI : MonoBehaviour
             if(!bagOpen)
             {
                 inventoryUI.gameObject.SetActive(true);
+                ShowCoins(playerControl.playerInventory.coins);
+                IsShowEquitInven(true);
                 bagOpen=true;
                 ShowInventory();
+                Time.timeScale=0f;
             }
             else
             {
-                inventoryUI.gameObject.SetActive(false);
-                bagOpen=false;
-                IsShowItemInfor(false);
+                CloseButton();
             }
             
         }
+    }
+    public void ShowCoins(int _coins)
+    {
+        coinText.text="Coins:"+_coins.ToString();
+    }
+    public void CloseButton()
+    {
+        inventoryUI.gameObject.SetActive(false);
+        bagOpen=false;
+        IsShowItemInfor(false);
+        Time.timeScale=1f;
+    }
+    public void ShowShop()
+    {
+        inventoryUI.gameObject.SetActive(true);
+        ShowCoins(playerControl.playerInventory.coins);
+        IsShowEquitInven(false);
+        ShowBuy();
+        remove_drop.SetActive(false);
+        use_drop.SetActive(false);
+        shopButPan.SetActive(true);
+    }
+    public void ShowBuy()
+    {
+        playerControl.playerInventory.RefreshSlot(playerControl.npc_Dialogue.npcCtrl.listBuyShop,m_Panel);
+        IsShowItemInfor(false);
+        buyBut.gameObject.SetActive(true);
+        sellBut.gameObject.SetActive(false);
+        
+    }
+    public void ShowSell()
+    {
+        playerControl.playerInventory.RefreshSlot(playerControl.playerInventory.GetItemList(),m_Panel);
+        IsShowItemInfor(false);
+        buyBut.gameObject.SetActive(false);
+        sellBut.gameObject.SetActive(true);
+    }
+
+    public void IsShowEquitInven(bool _isShow)
+    {
+        equit_inven.gameObject.SetActive(_isShow);
+        buy_sell.gameObject.SetActive(!_isShow);
     }
     public void ShowInventory()
     {
         invenPanel.SetActive(true);
         equipPanel.SetActive(false);
-        playerControl.playerInventory.RefreshSlot();
+        playerControl.playerInventory.RefreshSlot(playerControl.playerInventory.GetItemList(),playerControl.playerInventory.panel);
         IsShowItemInfor(false);
+        remove_drop.SetActive(false);
+        use_drop.SetActive(true);
+        shopButPan.SetActive(false);
     }
     public void ShowEquipment()
     {
@@ -78,6 +130,9 @@ public class PlayerUI : MonoBehaviour
         expCharInfor.text="EXP : " + playerControl.levelSystem.cur_Exp.ToString() + 
         "/" + playerControl.levelSystem.expLevelUp.ToString();
         IsShowItemInfor(false);
+        remove_drop.SetActive(true);
+        use_drop.SetActive(false);
+        shopButPan.SetActive(false);
     }
     public void ShowItemInfor(Item _item)
     {
@@ -87,26 +142,13 @@ public class PlayerUI : MonoBehaviour
         ItemInfor itemInforScr=item.GetItemObject().GetComponent<ItemInfor>();
         itemName.text=itemInforScr.nameItem;
         capText.text=itemInforScr.description;
+        priceText.text=item.GetPrice().ToString();
         if(item.IsEquipment())
         {
             IsShowEquipStat(true);
             EquipmentInfor equipInforScr=item.GetItemObject().GetComponent<EquipmentInfor>();
             hpBonus.text="+ " + equipInforScr.hp;
             atkBonus.text="+ " + equipInforScr.atk;
-            if(item.wasEquiped)
-            {
-                removeBut.gameObject.SetActive(true);
-                equipDropBut.gameObject.SetActive(true);
-                useBut.gameObject.SetActive(false);
-                dropBut.gameObject.SetActive(false);
-            }
-            else
-            {
-                useBut.gameObject.SetActive(true);
-                dropBut.gameObject.SetActive(true);
-                removeBut.gameObject.SetActive(false);
-                equipDropBut.gameObject.SetActive(false);
-            }
         }
         else
         {
@@ -187,5 +229,21 @@ public class PlayerUI : MonoBehaviour
         playerControl.playerEquip.Drop(item);
         playerControl.playerEquip.RefreshEquip();
         IsShowItemInfor(false);
+    }
+    public void BuyButton()
+    {
+        if(playerControl.playerInventory.coins>=item.GetPrice())
+        {
+            playerControl.playerInventory.coins-=item.GetPrice();
+            ShowCoins(playerControl.playerInventory.coins);
+            playerControl.playerInventory.AddItemToList(new Item{itemType=item.itemType,amount=1, typeInt=item.typeInt});
+        }
+    }
+    public void SellButton()
+    {
+        playerControl.playerInventory.coins+=item.GetPrice();
+        ShowCoins(playerControl.playerInventory.coins);
+        playerControl.playerInventory.RemoveItem(item);
+        playerControl.playerInventory.RefreshSlot(playerControl.playerInventory.GetItemList(),m_Panel);
     }
 }

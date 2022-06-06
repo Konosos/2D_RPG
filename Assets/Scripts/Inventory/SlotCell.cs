@@ -24,4 +24,5 @@ public class SlotCell : MonoBehaviour
     {
         playerControl.playerUI.ShowItemInfor(item);
     }
+    
 }

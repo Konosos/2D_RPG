@@ -10,7 +10,7 @@ public class OppossumCtrl : MonoBehaviour
     public DetectAndAttack detectAndAttack;
     public EnemyInformation enemyInfor;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         oppAnim=GetComponent<OppossumAnimation>();
         oppMove=GetComponent<OppossumMove>();
