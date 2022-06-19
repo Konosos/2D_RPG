@@ -10,11 +10,6 @@ public class PlayerInformation : Information
 
     [SerializeField]private PlayerController playerControl;
 
-    protected override void Start()
-    {
-        base.Start();
-
-    }
     protected override void Die()
     {
         Debug.Log("Player Die!!!");

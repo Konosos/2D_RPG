@@ -7,7 +7,9 @@ public class Item
 {
     public enum ItemType{Gold,HealthPotion,ManaPotion,ExpBook,
     LeatherArmor,LeatherBoot,LeatherHelmet,
-    IronArmor,IronBoot,IronHelmet,WoodenSword,IronSword,SilverSword,GoldenSword};
+    IronArmor,IronBoot,IronHelmet,
+    WoodenSword,IronSword,SilverSword,GoldenSword,
+    Cherry,ChickenHam,GreenApple,Apple};
     public ItemType itemType;
     public int amount;
     public int typeInt;
@@ -32,6 +34,10 @@ public class Item
             case (int)ItemType.IronSword:       itemType=ItemType.IronSword;break;
             case (int)ItemType.SilverSword:     itemType=ItemType.SilverSword;break;
             case (int)ItemType.GoldenSword:     itemType=ItemType.GoldenSword;break;
+            case (int)ItemType.Cherry:          itemType=ItemType.Cherry;break;
+            case (int)ItemType.ChickenHam:      itemType=ItemType.ChickenHam;break;
+            case (int)ItemType.GreenApple:      itemType=ItemType.GreenApple;break;
+            case (int)ItemType.Apple:           itemType=ItemType.Apple;break;
         }
     }
     public int GetPrice()
@@ -53,6 +59,10 @@ public class Item
             case (int)ItemType.IronSword:       return 200;
             case (int)ItemType.SilverSword:     return 400;
             case (int)ItemType.GoldenSword:     return 600;
+            case (int)ItemType.Cherry:          return 1;
+            case (int)ItemType.ChickenHam:      return 1;    
+            case (int)ItemType.GreenApple:      return 1;    
+            case (int)ItemType.Apple:           return 1;
         }
     }
     public Sprite GetSprite()
@@ -83,6 +93,10 @@ public class Item
             case (int)ItemType.ManaPotion:
             case (int)ItemType.Gold:
             case (int)ItemType.ExpBook:
+            case (int)ItemType.Cherry:
+            case (int)ItemType.ChickenHam:
+            case (int)ItemType.GreenApple:
+            case (int)ItemType.Apple:
             return true;
         }
     }
@@ -106,6 +120,10 @@ public class Item
             case (int)ItemType.ManaPotion:
             case (int)ItemType.Gold:
             case (int)ItemType.ExpBook:
+            case (int)ItemType.Cherry:
+            case (int)ItemType.ChickenHam:
+            case (int)ItemType.GreenApple:
+            case (int)ItemType.Apple:
             return false;
         }
     }

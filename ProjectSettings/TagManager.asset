@@ -39,7 +39,7 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: BackGround
+  - name: Top
     uniqueID: 604853437
     locked: 0
   - name: Default

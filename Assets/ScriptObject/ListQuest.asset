@@ -12,22 +12,206 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb0f6bb2f5947fe4a860a061afc493f3, type: 3}
   m_Name: ListQuest
   m_EditorClassIdentifier: 
+  dialogues:
+  - name: TheOldMan
+    sentences:
+    - "M\u1ED7i ng\u01B0\u1EDDi 1 l\u1EA7n ch\u1EC9 \u0111\u01B0\u1EE3c nh\u1EADn
+      1 nhi\u1EC7m v\u1EE5. H\xE3y ho\xE0n th\xE0nh nhi\u1EC7m v\u1EE5 \u0111ang
+      c\xF3 tr\u01B0\u1EDBc."
+  hasQuest: 1
+  cur_Quest: 0
   quests:
   - isActive: 0
-    title: 
-    description: 
+    startDialogues:
+    - name: TheOldMan
+      sentences:
+      - "Oh, Sara! \u0110\xFAng l\xFAc c\xF3 vi\u1EC7c t\xECm ng\u01B0\u01A1i."
+    - name: Sara
+      sentences:
+      - "Tr\u01B0\u1EDFng l\xE3o, Ng\xE0i t\xECm ta c\xF3 vi\u1EC7c g\xEC nha?"
+    - name: TheOldMan
+      sentences:
+      - "S\u1EAFp t\u1EDBi sinh nh\u1EADt th\xF4n tr\u01B0\u1EDFng r\u1ED3i! Ng\u01B0\u01A1i
+        bi\u1EBFt nh\u01B0 th\u1EBF ngh\u0129a l\xE0 g\xEC kh\xF4ng?"
+    - name: Sara
+      sentences:
+      - "L\xE0 ta s\u1EAFp \u0111\u01B0\u1EE3c ngh\u1EC9 1 bu\u1ED5i ki\u1EBFm thu\u1EADt
+        ph\u1EA3i kh\xF4ng?"
+    - name: TheOldMan
+      sentences:
+      - "Kh\xF4ng! M\xE0 l\xE0 ch\xFAng ta ph\u1EA3i chu\u1EA9n b\u1ECB qu\xE0 cho
+        \xF4ng \u1EA5y. Ng\u01B0\u01A1i c\xF2n nh\u1EDB c\u1EA3m gi\xE1c b\u1ECB
+        treo l\u1EE7ng l\u1EB3ng tr\u01B0\u1EDBc c\u1ED5ng nh\xE0 tr\u01B0\u1EDFng
+        th\xF4n v\xEC qu\xEAn sinh nh\u1EADt n\u0103m ngo\xE1i kh\xF4ng?"
+      - "Mau ra \u0111\u1EA7u l\xE0ng h\xE1i m\u1EA5y qu\u1EA3 cherry v\u1EC1 \u0111\xE2y.
+        Ta s\u1EBD \u0111\xEDch th\xE2n l\xE0m b\xE1nh sinh nh\u1EADt t\u1EB7ng Tr\u01B0\u1EDFng
+        Th\xF4n."
+    - name: Sara
+      sentences:
+      - "L\xE0m b\xE1nh, ng\xE0i bi\u1EBFt l\xE0m b\xE1nh sao?"
+    - name: TheOldMan
+      sentences:
+      - "C\xF3 c\xE1i g\xEC ta kh\xF4ng bi\u1EBFt l\xE0m? Th\xF4i kh\xF4ng n\xF3i
+        nh\u1EA3m c\xF9ng ng\u01B0\u01A1i n\u1EEFa. Mau \u0111i \u0111i th\xF4i."
+    finishDialogues:
+    - name: TheOldMan
+      sentences:
+      - "T\u1ED1t l\u1EAFm! T\u1ED1t l\u1EAFm! Ch\u1EA5t l\u01B0\u1EE3ng kh\xF4ng
+        t\u1EC7!"
+      - "\u0110\xE2y l\xE0 ph\u1EA7n th\u01B0\u1EDFng c\u1EE7a ng\u01B0\u01A1i."
+    title: "Qu\xE0 m\u1EEBng sinh nh\u1EADt!!!"
+    description: "Chu\u1EA9n b\u1ECB cho sinh nh\u1EADt tr\u01B0\u1EDFng th\xF4n,
+      The Old Man mu\u1ED1n ng\u01B0\u01A1i mang v\u1EC1 m\u1ED9t \xEDt qu\u1EA3
+      Cherry."
+    expBookReward: 4
+    coinsReward: 100
+    goalType: 1
+    goalID: 14
+    requiredAmount: 10
+    currentAmount: 0
+  - isActive: 0
+    startDialogues:
+    - name: TheOldMan
+      sentences:
+      - "Ng\u01B0\u1EDDi tr\u1EBB tu\u1ED5i! H\xE3y nh\u1EADn l\u1EA5y nhi\u1EC7m
+        v\u1EE5 n\xE0y."
+    finishDialogues:
+    - name: TheOldMan
+      sentences:
+      - "Nhanh nh\u01B0 v\u1EADy \u0111\xE3 ho\xE0n th\xE0nh nhi\u1EC7m v\u1EE5!
+        \u0110\xE2y l\xE0 ph\u1EA7n th\u01B0\u1EDFng c\u1EE7a ng\u01B0\u01A1i."
+    title: "B\u1EA3o v\u1EC7 m\xF9a m\xE0ng"
+    description: "G\u1EA7n \u0111\xE2y s\u1ED1 l\u01B0\u1EE3ng chu\u1ED9t t\u0103ng
+      l\xEAn \u0111\xE1ng k\u1EC3, ru\u1ED9ng l\xFAa c\xF3 nguy c\u01A1 m\u1EA5t
+      tr\u1EAFng. Mau \u0111i ti\xEAu di\u1EC7t ch\xFAng!"
     expBookReward: 4
     coinsReward: 100
     goalType: 0
     goalID: 0
-    requiredAmount: 4
+    requiredAmount: 10
     currentAmount: 0
   - isActive: 0
-    title: 
-    description: 
+    startDialogues:
+    - name: TheOldMan
+      sentences:
+      - "Ng\u01B0\u1EDDi tr\u1EBB tu\u1ED5i! H\xE3y nh\u1EADn l\u1EA5y nhi\u1EC7m
+        v\u1EE5 n\xE0y."
+    finishDialogues:
+    - name: TheOldMan
+      sentences:
+      - "Nhanh nh\u01B0 v\u1EADy \u0111\xE3 ho\xE0n th\xE0nh nhi\u1EC7m v\u1EE5!
+        \u0110\xE2y l\xE0 ph\u1EA7n th\u01B0\u1EDFng c\u1EE7a ng\u01B0\u01A1i."
+    title: "K\u1EF9 n\u0103ng sinh t\u1ED3n"
+    description: "\u0110\u1EC3 chu\u1EA9n b\u1ECB cho chuy\u1EBFn \u0111i, tr\u01B0\u1EDFng
+      l\xE3o d\u1EA1y cho ng\u01B0\u01A1i c\xE1ch t\xECm th\u1EE9c \u0103n. M\u1EE5c
+      ti\xEAu t\xECm v\u1EC1 10 qu\u1EA3 t\xE1o ch\xEDn."
     expBookReward: 4
     coinsReward: 100
     goalType: 1
+    goalID: 17
+    requiredAmount: 10
+    currentAmount: 0
+  - isActive: 0
+    startDialogues:
+    - name: TheOldMan
+      sentences:
+      - "Ng\u01B0\u1EDDi tr\u1EBB tu\u1ED5i! H\xE3y nh\u1EADn l\u1EA5y nhi\u1EC7m
+        v\u1EE5 n\xE0y."
+    finishDialogues:
+    - name: TheOldMan
+      sentences:
+      - "Nhanh nh\u01B0 v\u1EADy \u0111\xE3 ho\xE0n th\xE0nh nhi\u1EC7m v\u1EE5!
+        \u0110\xE2y l\xE0 ph\u1EA7n th\u01B0\u1EDFng c\u1EE7a ng\u01B0\u01A1i."
+    title: "K\u1EF9 n\u0103ng sinh t\u1ED3n"
+    description: "\u0110\u1EC3 chu\u1EA9n b\u1ECB cho chuy\u1EBFn \u0111i, tr\u01B0\u1EDFng
+      l\xE3o d\u1EA1y cho ng\u01B0\u01A1i c\xE1ch t\xECm th\u1EE9c \u0103n. M\u1EE5c
+      ti\xEAu t\xECm v\u1EC1 10 \u0111\xF9i g\xE0."
+    expBookReward: 4
+    coinsReward: 100
+    goalType: 1
+    goalID: 15
+    requiredAmount: 10
+    currentAmount: 0
+  - isActive: 0
+    startDialogues:
+    - name: TheOldMan
+      sentences:
+      - "Ng\u01B0\u1EDDi tr\u1EBB tu\u1ED5i! H\xE3y nh\u1EADn l\u1EA5y nhi\u1EC7m
+        v\u1EE5 n\xE0y."
+    finishDialogues:
+    - name: TheOldMan
+      sentences:
+      - "Nhanh nh\u01B0 v\u1EADy \u0111\xE3 ho\xE0n th\xE0nh nhi\u1EC7m v\u1EE5!
+        \u0110\xE2y l\xE0 ph\u1EA7n th\u01B0\u1EDFng c\u1EE7a ng\u01B0\u01A1i."
+    title: "Tr\u1EEB gian di\u1EC7t \xE1c"
+    description: "K\u1EBB c\u01B0\u1EDBp ho\xE0nh h\xE0nh, l\xE0m h\u1EA1i ng\u01B0\u1EDDi
+      d\xE2n. Mau ti\xEAu di\u1EC7t 20 t\xEAn s\u01A1n t\u1EB7c."
+    expBookReward: 4
+    coinsReward: 100
+    goalType: 0
     goalID: 1
-    requiredAmount: 4
+    requiredAmount: 20
+    currentAmount: 0
+  - isActive: 0
+    startDialogues:
+    - name: TheOldMan
+      sentences:
+      - "Ng\u01B0\u1EDDi tr\u1EBB tu\u1ED5i! H\xE3y nh\u1EADn l\u1EA5y nhi\u1EC7m
+        v\u1EE5 n\xE0y."
+    finishDialogues:
+    - name: TheOldMan
+      sentences:
+      - "Nhanh nh\u01B0 v\u1EADy \u0111\xE3 ho\xE0n th\xE0nh nhi\u1EC7m v\u1EE5!
+        \u0110\xE2y l\xE0 ph\u1EA7n th\u01B0\u1EDFng c\u1EE7a ng\u01B0\u01A1i."
+    title: "\u0110\xE1nh nh\u1ECF xong \u0111\xE1nh l\u1EDBn"
+    description: "\u0110\u1EC3 ch\u1EA5m d\u1EE9t n\u1EA1n tr\u1ED9m c\u01B0\u1EDBp,
+      ph\u1EA3i ti\xEAu di\u1EC7t th\u1EE7 l\u0129nh s\u01A1n t\u1EB7c. Mau ti\xEAu
+      di\u1EC7t 20 t\u01B0\u1EDBng c\u01B0\u1EDBp."
+    expBookReward: 4
+    coinsReward: 100
+    goalType: 0
+    goalID: 2
+    requiredAmount: 20
+    currentAmount: 0
+  - isActive: 0
+    startDialogues:
+    - name: TheOldMan
+      sentences:
+      - "Ng\u01B0\u1EDDi tr\u1EBB tu\u1ED5i! H\xE3y nh\u1EADn l\u1EA5y nhi\u1EC7m
+        v\u1EE5 n\xE0y."
+    finishDialogues:
+    - name: TheOldMan
+      sentences:
+      - "Nhanh nh\u01B0 v\u1EADy \u0111\xE3 ho\xE0n th\xE0nh nhi\u1EC7m v\u1EE5!
+        \u0110\xE2y l\xE0 ph\u1EA7n th\u01B0\u1EDFng c\u1EE7a ng\u01B0\u01A1i."
+    title: "Kh\xE1m ph\xE1 h\u1EA7m ng\u1EE5c"
+    description: "S\u01A1 nh\u1EADp h\u1EA7m ng\u1EE5c, g\u1EB7p x\u01B0\u01A1ng
+      kh\xF4 c\u1EA3n \u0111\u01B0\u1EDDng li\u1EC1n thu\u1EADn tay don d\u1EB9p
+      m\u1ED9t ch\xFAt."
+    expBookReward: 4
+    coinsReward: 100
+    goalType: 0
+    goalID: 5
+    requiredAmount: 20
+    currentAmount: 0
+  - isActive: 0
+    startDialogues:
+    - name: TheOldMan
+      sentences:
+      - "Ng\u01B0\u1EDDi tr\u1EBB tu\u1ED5i! H\xE3y nh\u1EADn l\u1EA5y nhi\u1EC7m
+        v\u1EE5 n\xE0y."
+    finishDialogues:
+    - name: TheOldMan
+      sentences:
+      - "Nhanh nh\u01B0 v\u1EADy \u0111\xE3 ho\xE0n th\xE0nh nhi\u1EC7m v\u1EE5!
+        \u0110\xE2y l\xE0 ph\u1EA7n th\u01B0\u1EDFng c\u1EE7a ng\u01B0\u01A1i."
+    title: Bringer Of Death
+    description: "\u0110\u1EC3 \u0111\u1EA3 th\xF4ng h\u1EA7m ng\u1EE5c c\u1EA7n
+      \u0111\xE1nh b\u1EA1i Bringer Of Death, t\xE0 linh chi\u1EBFm gi\u1EEF c\u1EEDa
+      ra c\u1EE7a h\u1EA7m ng\u1EE5c."
+    expBookReward: 4
+    coinsReward: 100
+    goalType: 0
+    goalID: 6
+    requiredAmount: 1
     currentAmount: 0

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e5c876a9f2cedf42978ee9663fc7c66, type: 3}
+  m_Name: Cur_PlayerData
+  m_EditorClassIdentifier: 
+  save_MaxHealth: 200
+  save_CurHealth: 0
+  save_Atk: 40
+  save_Level: 1
+  save_ExpLevelUp: 1000
+  save_CurExp: 0
+  save_Coins: 10000
+  save_CurSceneIndex: 3
+  save_isNextScene: 1
+  saveEquip:
+  - itemType: 0
+    amount: 0
+    typeInt: 0
+    price: 0
+  - itemType: 0
+    amount: 0
+    typeInt: 0
+    price: 0
+  - itemType: 0
+    amount: 0
+    typeInt: 0
+    price: 0
+  - itemType: 0
+    amount: 0
+    typeInt: 0
+    price: 0
+  saveInven: []

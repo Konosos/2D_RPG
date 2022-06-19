@@ -6,20 +6,39 @@ using UnityEngine.SceneManagement;
 
 public class PlayerChangeScene : MonoBehaviour
 {
-    private PlayerController playerControl;
+    [SerializeField]private PlayerController playerControl;
+    public PlayerData cur_PlayerData;
 
     private void Awake()
     {
-        playerControl=GetComponent<PlayerController>();
         LoadData();
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
         
+    }
+    private void Start()
+    {
+        if(cur_PlayerData.save_isNextScene)
+        {
+            transform.position=LoadSceneManager.instance.startPos.position;
+        }
+        else
+        {
+            transform.position=LoadSceneManager.instance.endPos.position;
+        }
     }
 
     private void LoadData()
+    {
+        playerControl.playerInfor.maxHealth=cur_PlayerData.save_MaxHealth;
+        playerControl.playerInfor.cur_Health=cur_PlayerData.save_CurHealth;
+        playerControl.playerInfor.atk=cur_PlayerData.save_Atk;
+        playerControl.levelSystem.cur_Level=cur_PlayerData.save_Level;
+        playerControl.levelSystem.expLevelUp=cur_PlayerData.save_ExpLevelUp;
+        playerControl.levelSystem.cur_Exp=cur_PlayerData.save_CurExp;
+        playerControl.playerInventory.itemList=cur_PlayerData.saveInven;
+        playerControl.playerInventory.coins=cur_PlayerData.save_Coins;
+        playerControl.playerEquip.equipItem=cur_PlayerData.saveEquip;
+    }
+    /*private void LoadData()
     {
         if(PlayerPrefs.GetString("Json")!="")
         {
@@ -36,7 +55,20 @@ public class PlayerChangeScene : MonoBehaviour
             playerControl.playerInventory.coins=data.save_Coins;
             playerControl.playerEquip.equipItemTypes=data.saveEquipType;
         }
-    }
+        else
+        {
+            playerControl.playerInfor.maxHealth=200;
+            playerControl.playerInfor.cur_Health=200;
+            playerControl.playerInfor.atk=40;
+            playerControl.levelSystem.cur_Level=1;
+            playerControl.levelSystem.expLevelUp=1000;
+            playerControl.levelSystem.cur_Exp=0;
+            playerControl.playerInventory.typeItemList=new List<int>();
+            playerControl.playerInventory.amountList=new List<int>();
+            playerControl.playerInventory.coins=1010;
+            playerControl.playerEquip.equipItemTypes=new int[4];
+        }
+    }*/
 
     // Update is called once per frame
     void Update()
@@ -52,7 +84,7 @@ public class PlayerChangeScene : MonoBehaviour
 
         }
     }
-     public void SaveData()
+    /*public void SaveData()
      {
          DataSave data=new DataSave();
 
@@ -71,5 +103,17 @@ public class PlayerChangeScene : MonoBehaviour
         string json=JsonUtility.ToJson(data,true);
         Debug.Log(json);
         PlayerPrefs.SetString("Json",json);
-     }
+    }*/
+    public void SaveData()
+    {
+        cur_PlayerData.save_MaxHealth=playerControl.playerInfor.maxHealth;
+        cur_PlayerData.save_CurHealth=playerControl.playerInfor.cur_Health;
+        cur_PlayerData.save_Atk=playerControl.playerInfor.atk;
+        cur_PlayerData.save_Level=playerControl.levelSystem.cur_Level;
+        cur_PlayerData.save_ExpLevelUp=playerControl.levelSystem.expLevelUp;
+        cur_PlayerData.save_CurExp=playerControl.levelSystem.cur_Exp;
+        cur_PlayerData.saveInven=playerControl.playerInventory.itemList;
+        cur_PlayerData.save_Coins=playerControl.playerInventory.coins;
+        cur_PlayerData.saveEquip=playerControl.playerEquip.equipItem;
+    }
 }

@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb0f6bb2f5947fe4a860a061afc493f3, type: 3}
+  m_Name: Cur_ListQuest
+  m_EditorClassIdentifier: 
+  dialogues:
+  - name: TheOldMan
+    sentences:
+    - "M\u1ED7i ng\u01B0\u1EDDi 1 l\u1EA7n ch\u1EC9 \u0111\u01B0\u1EE3c nh\u1EADn
+      1 nhi\u1EC7m v\u1EE5. H\xE3y ho\xE0n th\xE0nh nhi\u1EC7m v\u1EE5 \u0111ang
+      c\xF3 tr\u01B0\u1EDBc."
+  quests:
+  - isActive: 1
+    startDialogues:
+    - name: TheOldMan
+      sentences:
+      - "Oh, Sara! \u0110\xFAng l\xFAc c\xF3 vi\u1EC7c t\xECm ng\u01B0\u01A1i."
+    - name: Sara
+      sentences:
+      - "Tr\u01B0\u1EDFng l\xE3o, Ng\xE0i t\xECm ta c\xF3 vi\u1EC7c g\xEC nha?"
+    - name: TheOldMan
+      sentences:
+      - "S\u1EAFp t\u1EDBi sinh nh\u1EADt th\xF4n tr\u01B0\u1EDFng r\u1ED3i! Ng\u01B0\u01A1i
+        bi\u1EBFt nh\u01B0 th\u1EBF ngh\u0129a l\xE0 g\xEC kh\xF4ng?"
+    - name: Sara
+      sentences:
+      - "L\xE0 ta s\u1EAFp \u0111\u01B0\u1EE3c ngh\u1EC9 1 bu\u1ED5i ki\u1EBFm thu\u1EADt
+        ph\u1EA3i kh\xF4ng?"
+    - name: TheOldMan
+      sentences:
+      - "Kh\xF4ng! M\xE0 l\xE0 ch\xFAng ta ph\u1EA3i chu\u1EA9n b\u1ECB qu\xE0 cho
+        \xF4ng \u1EA5y. Ng\u01B0\u01A1i c\xF2n nh\u1EDB c\u1EA3m gi\xE1c b\u1ECB
+        treo l\u1EE7ng l\u1EB3ng tr\u01B0\u1EDBc c\u1ED5ng nh\xE0 tr\u01B0\u1EDFng
+        th\xF4n v\xEC qu\xEAn sinh nh\u1EADt n\u0103m ngo\xE1i kh\xF4ng?"
+      - "Mau ra \u0111\u1EA7u l\xE0ng h\xE1i m\u1EA5y qu\u1EA3 cherry v\u1EC1 \u0111\xE2y.
+        Ta s\u1EBD \u0111\xEDch th\xE2n l\xE0m b\xE1nh sinh nh\u1EADt t\u1EB7ng Tr\u01B0\u1EDFng
+        Th\xF4n."
+    - name: Sara
+      sentences:
+      - "L\xE0m b\xE1nh, ng\xE0i bi\u1EBFt l\xE0m b\xE1nh sao?"
+    - name: TheOldMan
+      sentences:
+      - "C\xF3 c\xE1i g\xEC ta kh\xF4ng bi\u1EBFt l\xE0m? Th\xF4i kh\xF4ng n\xF3i
+        nh\u1EA3m c\xF9ng ng\u01B0\u01A1i n\u1EEFa. Mau \u0111i \u0111i th\xF4i."
+    finishDialogues:
+    - name: TheOldMan
+      sentences:
+      - "T\u1ED1t l\u1EAFm! T\u1ED1t l\u1EAFm! Ch\u1EA5t l\u01B0\u1EE3ng kh\xF4ng
+        t\u1EC7!"
+      - "\u0110\xE2y l\xE0 ph\u1EA7n th\u01B0\u1EDFng c\u1EE7a ng\u01B0\u01A1i."
+    title: "Qu\xE0 m\u1EEBng sinh nh\u1EADt!!!"
+    description: "Chu\u1EA9n b\u1ECB cho sinh nh\u1EADt tr\u01B0\u1EDFng th\xF4n,
+      The Old Man mu\u1ED1n ng\u01B0\u01A1i mang v\u1EC1 m\u1ED9t \xEDt qu\u1EA3
+      Cherry."
+    expBookReward: 4
+    coinsReward: 100
+    goalType: 1
+    goalID: 14
+    requiredAmount: 10
+    currentAmount: 0
+  - isActive: 0
+    startDialogues:
+    - name: TheOldMan
+      sentences:
+      - "Ng\u01B0\u1EDDi tr\u1EBB tu\u1ED5i! H\xE3y nh\u1EADn l\u1EA5y nhi\u1EC7m
+        v\u1EE5 n\xE0y."
+    finishDialogues:
+    - name: TheOldMan
+      sentences:
+      - "Nhanh nh\u01B0 v\u1EADy \u0111\xE3 ho\xE0n th\xE0nh nhi\u1EC7m v\u1EE5!
+        \u0110\xE2y l\xE0 ph\u1EA7n th\u01B0\u1EDFng c\u1EE7a ng\u01B0\u01A1i."
+    title: "B\u1EA3o v\u1EC7 m\xF9a m\xE0ng"
+    description: "G\u1EA7n \u0111\xE2y s\u1ED1 l\u01B0\u1EE3ng chu\u1ED9t t\u0103ng
+      l\xEAn \u0111\xE1ng k\u1EC3, ru\u1ED9ng l\xFAa c\xF3 nguy c\u01A1 m\u1EA5t
+      tr\u1EAFng. Mau \u0111i ti\xEAu di\u1EC7t ch\xFAng!"
+    expBookReward: 4
+    coinsReward: 100
+    goalType: 0
+    goalID: 0
+    requiredAmount: 10
+    currentAmount: 0

@@ -6,6 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/MainMenu.unity
+    guid: c5b275e74768af645b7d701672694ed2
+  - enabled: 1
+    path: Assets/Scenes/NewBieVillage.unity
+    guid: b82a3955edc220e40b15aafb73ad728b
+  - enabled: 1
+    path: Assets/Scenes/RiceField.unity
+    guid: 894e1638fa0edb240917d963f81f7061
+  - enabled: 1
+    path: Assets/Scenes/Infinity.unity
+    guid: 57e41b3803bf99b4bab027895a396121
+  - enabled: 1
+    path: Assets/Scenes/TopMount.unity
+    guid: 38e0f1813820b7e438da359e1614d271
+  - enabled: 1
+    path: Assets/Scenes/TheAbyss.unity
+    guid: 545b14320d8716c468e92a0c5a72bbc1
+  - enabled: 1
+    path: Assets/Scenes/LastFloor.unity
+    guid: 8a185941bec64ae4caa5106ee4d18974
   m_configObjects: {}

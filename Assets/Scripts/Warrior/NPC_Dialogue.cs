@@ -10,6 +10,12 @@ public class NPC_Dialogue : MonoBehaviour
     
     public NpcCtrl npcCtrl=null;
     public Quest quest=null;
+    public QuestBoard questBoard;
+
+    private void Start()
+    {
+        quest=questBoard.quests[questBoard.cur_Quest];
+    }
     
     // Update is called once per frame
     void Update()
@@ -22,7 +28,7 @@ public class NPC_Dialogue : MonoBehaviour
                 case 1:
                 case 2:DialogueManager.Instance.StartSomeDialogue(npcCtrl.dialogues,npcCtrl.typeNPC);break;
                 case 3:
-                if(npcCtrl.questBoard.quests.Count>0)
+                if(npcCtrl.questBoard.hasQuest)
                 {
                     QuestIsActive();
                 }
@@ -39,18 +45,18 @@ public class NPC_Dialogue : MonoBehaviour
     {
         if(quest.IsReached())
         {
-            DialogueManager.Instance.StartSomeDialogue(npcCtrl.dialogues,npcCtrl.typeNPC);
+            DialogueManager.Instance.StartSomeDialogue(quest.finishDialogues,npcCtrl.typeNPC);
         }
         else
         {
-            DialogueManager.Instance.StartSomeDialogue(npcCtrl.dialogues,npcCtrl.typeNPC);
+            DialogueManager.Instance.StartSomeDialogue(questBoard.dialogues,npcCtrl.typeNPC);
         }
     }
     private void QuestIsActive()
     {
         if(!quest.isActive)
         {
-            DialogueManager.Instance.StartSomeDialogue(npcCtrl.dialogues,npcCtrl.typeNPC);
+            DialogueManager.Instance.StartSomeDialogue(quest.startDialogues,npcCtrl.typeNPC);
         }
         else
         {
@@ -60,11 +66,11 @@ public class NPC_Dialogue : MonoBehaviour
     
     public void QuestNPCDia()
     {
-        if(npcCtrl.questBoard.quests.Count<=0)
+        if(!npcCtrl.questBoard.hasQuest)
             return;
         if(!quest.isActive)
         {
-            quest=npcCtrl.questBoard.quests[0];
+            quest=npcCtrl.questBoard.quests[npcCtrl.questBoard.cur_Quest];
             quest.isActive=true;
             UpdateGatheringAmount();
         }
@@ -79,11 +85,21 @@ public class NPC_Dialogue : MonoBehaviour
             return;
         GetReward();
 
-        npcCtrl.questBoard.quests.Remove(quest);
+        //npcCtrl.questBoard.quests.Remove(quest);
         quest.isActive=false;
         if(quest.IsGatheringQuest())
         {
             GiveItemToNPC();
+        }
+        if(npcCtrl.questBoard.cur_Quest<npcCtrl.questBoard.quests.Count-1)
+        {
+            npcCtrl.questBoard.cur_Quest++;
+            quest=quest=npcCtrl.questBoard.quests[npcCtrl.questBoard.cur_Quest];
+            npcCtrl.questBoard.hasQuest=true;
+        }
+        else
+        {
+            npcCtrl.questBoard.hasQuest=false;
         }
     }
     private void GiveItemToNPC()

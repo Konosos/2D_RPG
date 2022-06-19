@@ -30,6 +30,36 @@ Transform:
   m_Father: {fileID: 1897507050719886471}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &852587900432857192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5584542230907481610}
+  m_Layer: 8
+  m_Name: DameUIPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5584542230907481610
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852587900432857192}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.138, y: 0.579, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1897507050719886471}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1897507049527180833
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +165,7 @@ Transform:
   - {fileID: 1897507049612409014}
   - {fileID: 1897507049527180834}
   - {fileID: 1110436851}
+  - {fileID: 5584542230907481610}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -310,7 +341,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  attackRate: 3
 --- !u!114 &1897507050719886478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,11 +353,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e567ac88c974bc541a7bb054d414af25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerControl: {fileID: 1897507050719886477}
   attackPoint: {fileID: 1897507049527180834}
   attackRange: 1
   enemy:
     serializedVersion: 2
     m_Bits: 128
+  continueAttack: 0
+  inContinueAttackTime: 0
+  attackRate: 3
 --- !u!114 &1897507050719886479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,7 +379,10 @@ MonoBehaviour:
   atk: 40
   deathVFX: {fileID: 938893574032067651, guid: 7662de4395bd99c4e9ecd321641599d5, type: 3}
   deathVFXSpawnPos: {fileID: 1897507050719886471}
+  dameUISpawnPos: {fileID: 5584542230907481610}
   healthBar: {fileID: 0}
+  bloodVFX: {fileID: 149344, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+  dameUI: {fileID: 5737337300126550809, guid: 29ce0559eca949f40b6bee2ad4088836, type: 3}
   isHurt: 0
   isHurting: 0
   isDeath: 0
@@ -399,9 +436,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02fc8b639a8af2c4ab3f5545e290ae9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerControl: {fileID: 1897507050719886477}
   levelText: {fileID: 0}
   coinText: {fileID: 0}
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
+  reachedText: {fileID: 0}
+  coinsRewardText: {fileID: 0}
+  expBookRewardText: {fileID: 0}
   m_Panel: {fileID: 0}
+  questPanel: {fileID: 0}
+  questInforPanel: {fileID: 0}
   itemInforPanel: {fileID: 0}
   equipStatPanel: {fileID: 0}
   inventoryUI: {fileID: 0}
@@ -488,4 +533,18 @@ MonoBehaviour:
   npcLayer:
     serializedVersion: 2
     m_Bits: 512
+  playerControl: {fileID: 1897507050719886477}
   npcCtrl: {fileID: 0}
+  quest:
+    isActive: 0
+    startDialogues: []
+    finishDialogues: []
+    title: 
+    description: 
+    expBookReward: 0
+    coinsReward: 0
+    goalType: 0
+    goalID: 0
+    requiredAmount: 0
+    currentAmount: 0
+  questBoard: {fileID: 11400000, guid: 8097de728037b0a49946a89024f18f84, type: 2}

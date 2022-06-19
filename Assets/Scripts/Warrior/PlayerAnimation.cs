@@ -10,8 +10,7 @@ public class PlayerAnimation : MonoBehaviour
     public enum States{Idle,Run,Jump};
     public States state;
 
-    public float attackRate=3f;
-    private float nextAttackTime=0f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,17 +22,6 @@ public class PlayerAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.time>=nextAttackTime)
-        {
-            if(Input.GetMouseButtonDown(0))
-            {
-                if(playerControl.playerInfor.isHurting)
-                    return;
-                anim.SetTrigger("Attack");
-                playerControl.playerAttack.Attack();
-                nextAttackTime=Time.time+1/attackRate;
-            }
-        }
         UpdateStates();
     }
     private void UpdateStates()

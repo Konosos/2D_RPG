@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerInventorySystem : MonoBehaviour
 {
-    private PlayerController playerControl;
+    [SerializeField]private PlayerController playerControl;
     
     public List<Item> itemList;
     public List<int> amountList;
@@ -16,11 +16,7 @@ public class PlayerInventorySystem : MonoBehaviour
     public int coins=1000;
     [SerializeField]private Transform dropPos;
     
-    private void Start()
-    {
-        playerControl=GetComponent<PlayerController>();
-        LoadListItem();
-    }
+
     private void Update()
     {
         if(Input.GetKeyUp(KeyCode.P))
@@ -37,7 +33,7 @@ public class PlayerInventorySystem : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-    public void SaveList()
+    /*public void SaveList()
     {
         amountList=new List<int>();
         typeItemList=new List<int>();
@@ -58,7 +54,7 @@ public class PlayerInventorySystem : MonoBehaviour
         {
             item.SetItemType();
         }
-    }
+    }*/
     public void AddItemToList(Item item)
     {
         if(item.CanStackable())

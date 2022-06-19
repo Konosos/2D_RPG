@@ -6,6 +6,7 @@ public class SpawnEnemy : MonoBehaviour
 {
     [SerializeField]private GameObject enemyPrefab;
     [SerializeField]private GameObject enemyClone;
+    [SerializeField]private float timeSpawn=10f;
 
     private bool isTimeDown=false;
     private Transform trans;
@@ -20,7 +21,7 @@ public class SpawnEnemy : MonoBehaviour
     {
         if(enemyClone==null && !isTimeDown)
         {
-            Invoke("Spawn",10f);
+            Invoke("Spawn",timeSpawn);
             isTimeDown=true;
         }
     }

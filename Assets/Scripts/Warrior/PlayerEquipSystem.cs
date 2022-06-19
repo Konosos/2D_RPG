@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerEquipSystem : MonoBehaviour
 {
     public Item[] equipItem= new Item[4];
-    public int[] equipItemTypes={-1,-1,-1,-1};
+    //public int[] equipItemTypes=new int[4];
 
     [SerializeField]private GameObject slot;
     [SerializeField]private Transform panel;
@@ -19,10 +19,10 @@ public class PlayerEquipSystem : MonoBehaviour
     private void Start()
     {
 
-        LoadEquipList();
+        //LoadEquipList();
         UpdateEquipInfor();
     }
-    public void SaveEquipList()
+    /*public void SaveEquipList()
     {
         equipItemTypes=new int[4];
         for(int i=0;i<equipItem.Length;i++)
@@ -42,7 +42,7 @@ public class PlayerEquipSystem : MonoBehaviour
             equipItem[i].SetItemType();
         }
         
-    }
+    }*/
     public void UpdateEquipInfor()
     {
         hpBonus=0;
@@ -52,7 +52,6 @@ public class PlayerEquipSystem : MonoBehaviour
             EquipmentInfor equipScr=equip.GetItemObject().GetComponent<EquipmentInfor>();
             if(equipScr!=null)
             {
-                
                 hpBonus+= equipScr.hp;
                 atkBonus+=equipScr.atk;
             }

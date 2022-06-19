@@ -13,17 +13,13 @@ public class CamController : MonoBehaviour
     void Start()
     {
         trans=GetComponent<Transform>();
-        trans.position=new Vector3(playerTrans.position.x,trans.position.y,trans.position.z);
+        trans.position=new Vector3(playerTrans.position.x,playerTrans.position.y+2,trans.position.z);
     }
     // Update is called once per frame
     void Update()
     {
         float posX= playerTrans.position.x;
         posX=Mathf.Clamp(posX,xMin,xMax);
-        trans.position=new Vector3(posX,trans.position.y,trans.position.z);
-        /*if(playerTrans.position.x>xMin && playerTrans.position.x<xMax)
-        {
-            trans.position=new Vector3(playerTrans.position.x,trans.position.y,trans.position.z);
-        }*/
+        trans.position=new Vector3(posX,playerTrans.position.y+2,trans.position.z);
     }
 }

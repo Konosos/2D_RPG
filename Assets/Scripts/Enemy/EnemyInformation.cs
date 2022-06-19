@@ -9,12 +9,20 @@ public class EnemyInformation : Information
     public bool canAttack=false;
     public bool isAttack=false;
     public int enemyID;
+    [SerializeField]private Item[] items;
+    [SerializeField]private int spawnInt=1;
 
     protected override void Die()
     {
         base.Die();
-        ItemAsset.Instance.SpawnItem(transform.position,new Item{itemType=Item.ItemType.HealthPotion,amount=1, typeInt=1});
-        ItemAsset.Instance.SpawnItem(transform.position+Vector3.up,new Item{itemType=Item.ItemType.Gold,amount=5, typeInt=0});
-        ItemAsset.Instance.SpawnItem(transform.position+Vector3.up*2,new Item{itemType=Item.ItemType.ExpBook,amount=1, typeInt=3});
+        SpawnItem();
+    }
+    protected virtual void SpawnItem()
+    {
+        foreach(Item _item in items)
+        {
+            Vector3 randomDir=Random.insideUnitCircle;
+            ItemAsset.Instance.SpawnItem(transform.position +Vector3.up + randomDir,new Item{itemType=_item.itemType,amount=Random.Range(1,2)*spawnInt, typeInt=_item.typeInt});
+        }
     }
 }

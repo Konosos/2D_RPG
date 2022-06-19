@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DetectPlayer : MonoBehaviour
 {
+    [SerializeField]protected float dirX=1f;
     [SerializeField]protected float detectRange=3f;
     [SerializeField]protected LayerMask playerMask;
     protected Collider2D[] player;
@@ -17,11 +18,11 @@ public class DetectPlayer : MonoBehaviour
             float abs_LocalScaleX=Mathf.Abs(transform.localScale.x);
             if(var.transform.position.x<transform.position.x)
             {
-                transform.localScale=new Vector3(abs_LocalScaleX,transform.localScale.y,1);
+                transform.localScale=new Vector3(abs_LocalScaleX*dirX,transform.localScale.y,1);
             }
             else
             {
-                transform.localScale=new Vector3(-1*abs_LocalScaleX,transform.localScale.y,1);
+                transform.localScale=new Vector3(-abs_LocalScaleX*dirX,transform.localScale.y,1);
             }
         }
     }

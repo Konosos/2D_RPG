@@ -23,6 +23,7 @@ public class PlayerMov : MonoBehaviour
         trans=GetComponent<Transform>();
         playerControl=GetComponent<PlayerController>();
         trans.localScale=new Vector3(2,2,2);
+        Physics2D.IgnoreLayerCollision(7,8);
     }
     private void Update()
     {
@@ -33,6 +34,8 @@ public class PlayerMov : MonoBehaviour
     void FixedUpdate()
     {
         if(playerControl.playerInfor.isHurting)
+            return;
+        if(playerControl.playerInfor.isFitter)
             return;
         Vector3 moveDerect=new Vector3(horizonInput,0,0);
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded)

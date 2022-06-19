@@ -6,12 +6,14 @@ using UnityEngine;
 public class Quest 
 {
     public bool isActive;
+    public Dialogue[] startDialogues;
+    public Dialogue[] finishDialogues;
 
     public string title;
+    [TextArea(2, 5)]
     public string description;
     public int expBookReward;
     public int coinsReward;
-    //public QuestGoal questGoal;
     public enum GoalType{Kill,Gathering}
     public GoalType goalType;
     public int goalID;

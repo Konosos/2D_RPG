@@ -6,13 +6,20 @@ using TMPro;
 
 public class PlayerUI : MonoBehaviour
 {
-    private PlayerController playerControl;
+    [SerializeField]private PlayerController playerControl;
     private Item item;
     private bool bagOpen=false;
 
     [SerializeField]private TMP_Text levelText;
     [SerializeField]private TMP_Text coinText;
+    [SerializeField]private TMP_Text titleText;
+    [SerializeField]private TMP_Text descriptionText;
+    [SerializeField]private TMP_Text reachedText;
+    [SerializeField]private TMP_Text coinsRewardText;
+    [SerializeField]private TMP_Text expBookRewardText;
     [SerializeField]private Transform m_Panel;
+    [SerializeField]private GameObject questPanel;
+    [SerializeField]private GameObject questInforPanel;
     [SerializeField]private GameObject itemInforPanel;
     [SerializeField]private GameObject equipStatPanel;
     [SerializeField]private GameObject inventoryUI;
@@ -36,11 +43,8 @@ public class PlayerUI : MonoBehaviour
     [SerializeField]private GameObject use_drop;
     [SerializeField]private GameObject remove_drop;
     [SerializeField]private GameObject shopButPan;
-    // Start is called before the first frame update
-    void Start()
-    {
-        playerControl=GetComponent<PlayerController>();
-    }
+    [SerializeField]private GameObject optionPanel;
+
 
     public void UpdateLevel(int _level)
     {
@@ -64,6 +68,36 @@ public class PlayerUI : MonoBehaviour
                 CloseButton();
             }
             
+        }
+        if(Input.GetKeyUp(KeyCode.J))
+        {
+            questPanel.SetActive(true);
+            SetUpQuestInfor();
+            Time.timeScale=0f;
+        }
+        if(Input.GetKeyUp(KeyCode.O))
+        {
+            optionPanel.SetActive(true);
+            SoundManager.instance.SetSlider();
+            Time.timeScale=0f;
+        }
+    }
+
+    private void SetUpQuestInfor()
+    {
+        if(playerControl.npc_Dialogue.quest.isActive)
+        {
+            questInforPanel.SetActive(true);
+            titleText.text=playerControl.npc_Dialogue.quest.title;
+            descriptionText.text=playerControl.npc_Dialogue.quest.description;
+            reachedText.text="Reached : " + playerControl.npc_Dialogue.quest.currentAmount.ToString()
+            + "/" + playerControl.npc_Dialogue.quest.requiredAmount.ToString();
+            coinsRewardText.text="+ " + playerControl.npc_Dialogue.quest.coinsReward.ToString();
+            expBookRewardText.text="+ " + playerControl.npc_Dialogue.quest.expBookReward.ToString();
+        }
+        else
+        {
+            questInforPanel.SetActive(false);
         }
     }
     public void ShowCoins(int _coins)
@@ -245,5 +279,15 @@ public class PlayerUI : MonoBehaviour
         ShowCoins(playerControl.playerInventory.coins);
         playerControl.playerInventory.RemoveItem(item);
         playerControl.playerInventory.RefreshSlot(playerControl.playerInventory.GetItemList(),m_Panel);
+    }
+    public void BackButton()
+    {
+        questPanel.SetActive(false);
+        Time.timeScale=1f;
+    }
+    public void ContinueButton()
+    {
+        optionPanel.SetActive(false);
+        Time.timeScale=1f;
     }
 }
