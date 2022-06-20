@@ -78,7 +78,7 @@ public class Information : MonoBehaviour
             return;
         cur_Health -=dame;
         healthBar.SetHealth(cur_Health);
-        Instantiate(bloodVFX,transform.position,Quaternion.identity);
+        Instantiate(bloodVFX,deathVFXSpawnPos.position,Quaternion.identity);
         SpawnDame(dame);
         if(cur_Health<=0)
         {

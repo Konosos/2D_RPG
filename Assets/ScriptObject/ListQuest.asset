@@ -73,13 +73,29 @@ MonoBehaviour:
     startDialogues:
     - name: TheOldMan
       sentences:
-      - "Ng\u01B0\u1EDDi tr\u1EBB tu\u1ED5i! H\xE3y nh\u1EADn l\u1EA5y nhi\u1EC7m
-        v\u1EE5 n\xE0y."
-    finishDialogues:
+      - "Gi\u1EDD \u0111\u1EC3 ta xem th\xE2n th\u1EE7 c\u1EE7a ng\u01B0\u01A1i.
+        Ngo\xE0i ru\u1ED9ng l\xFAa, b\u1ECDn chu\u1ED9t xanh ph\xE1t tri\u1EC3n m\u1EA1nh,
+        h\xE3y ti\xEAu di\u1EC7t 10 con chu\u1ED9t xanh, b\u1EA3o v\u1EC7 m\xF9a
+        m\xE0ng."
+      - "Nh\u1EDB c\u1EA9n th\u1EADn ch\xFAt nh\xE9!"
+    - name: Sara
+      sentences:
+      - "B\u1EAFt chu\u1ED9t th\xF4i m\xE0 ng\xE0i c\u0169ng qu\xE1 coi th\u01B0\u1EDDng
+        ta r\u1ED3i."
     - name: TheOldMan
       sentences:
-      - "Nhanh nh\u01B0 v\u1EADy \u0111\xE3 ho\xE0n th\xE0nh nhi\u1EC7m v\u1EE5!
-        \u0110\xE2y l\xE0 ph\u1EA7n th\u01B0\u1EDFng c\u1EE7a ng\u01B0\u01A1i."
+      - "Kh\xE0 kh\xE0! C\u1EE9 \u0111i \u0111i ng\u01B0\u01A1i li\u1EC1n bi\u1EBFt."
+    finishDialogues:
+    - name: Sara
+      sentences:
+      - "Ta \u0111\xE3 ti\xEAu di\u1EC7t 20 con chu\u1ED9t v\u1EC1 \u0111\xE2y r\u1ED3i.
+        M\xE0 sao b\u1ECDn chu\u1ED9t n\xE0y l\u1EA1i to th\u1EBF tr\u01B0\u1EDFng
+        l\xE3o \u01A1i?"
+    - name: TheOldMan
+      sentences:
+      - "\u0110\u1EA5t l\xE0nh th\xEC chu\u1ED9t to th\xF4i. Xem ra th\xE2n th\u1EE7
+        ng\u01B0\u01A1i c\u0169ng kh\xE1 l\u1EAFm. V\u1EADy l\xFAc n\xE0o s\u1EB5n
+        s\xE0ng, ta c\xF3 vi\u1EC7c nh\u1EDD ng\u01B0\u01A1i."
     title: "B\u1EA3o v\u1EC7 m\xF9a m\xE0ng"
     description: "G\u1EA7n \u0111\xE2y s\u1ED1 l\u01B0\u1EE3ng chu\u1ED9t t\u0103ng
       l\xEAn \u0111\xE1ng k\u1EC3, ru\u1ED9ng l\xFAa c\xF3 nguy c\u01A1 m\u1EA5t
@@ -92,20 +108,47 @@ MonoBehaviour:
     currentAmount: 0
   - isActive: 0
     startDialogues:
+    - name: Sara
+      sentences:
+      - "Ah! Ch\xE0o tr\u01B0\u1EDFng l\xE3o! Ng\xE0i h\xF4m nay t\u1ED1t ch\u1EE9
+        \u1EA1?"
     - name: TheOldMan
       sentences:
-      - "Ng\u01B0\u1EDDi tr\u1EBB tu\u1ED5i! H\xE3y nh\u1EADn l\u1EA5y nhi\u1EC7m
-        v\u1EE5 n\xE0y."
+      - "Ngoan ngo\xE3n nh\u01B0 v\u1EADy. N\xF3i \u0111i l\u1EA1i c\xF3 vi\u1EC7c
+        g\xEC nh\u1EDD ta ph\u1EA3i kh\xF4ng?"
+    - name: Sara
+      sentences:
+      - "Ha, ha! Tr\u01B0\u1EDFng th\xF4n mu\u1ED1n ta ra b\xEAn ngo\xE0i \u0111i
+        m\u1EA1o hi\u1EC3m, c\xF2n d\u1EB7n ta \u0111\u1EBFn \u0111\u1EC3 ng\xE0i
+        ch\u1EC9 d\u1EA1y th\xEAm."
+      - "Tr\u01B0\u1EDFng l\xE3o, nghe n\xF3i n\u0103m \u0111\xF3 ng\xE0i t\u1EEBng
+        l\xE0 m\u1ED9t m\u1EA1o hi\u1EC3m gi\u1EA3 c\xF3 ti\u1EBFng?"
+    - name: TheOldMan
+      sentences:
+      - "Kh\xE0 kh\xE0! \u0110\u01B0\u01A1ng nhi\xEAn! Nh\u1EDB n\u0103m \u0111\xF3
+        ta ... Kh\u1EE5! Kh\xF4ng n\xF3i chuy\u1EC7n n\xE0y n\u1EEFa."
+      - "\u0110\u1EA7u ti\xEAn, vi\u1EC7c quan tr\u1ECDng nh\u1EA5t v\u1EDBi m\u1EA1o
+        hi\u1EC3m gi\u1EA3 l\xE0 sinh t\u1ED3n, ch\u1EE7 y\u1EBFu l\xE0 ki\u1EBFm
+        \u0111\u1ED3 \u0103n t\u1EEB t\u1EF1 nhi\xEAn."
+      - "Ng\u01B0\u01A1i mau ra c\xE1i c\xE2y kia h\xE0i v\u1EC1 \u0111\xE2y 10 qu\u1EA3
+        t\xE1o ch\xEDn, nh\u1EDB l\xE0 h\xE1i t\xE1o ch\xEDn \u0111\u1EA5y nh\xE9!"
     finishDialogues:
+    - name: Sara
+      sentences:
+      - "Tr\u01B0\u1EDFng l\xE3o, ta mang t\xE1o ch\xEDn v\u1EC1 r\u1ED3i n\xE0y."
     - name: TheOldMan
       sentences:
-      - "Nhanh nh\u01B0 v\u1EADy \u0111\xE3 ho\xE0n th\xE0nh nhi\u1EC7m v\u1EE5!
-        \u0110\xE2y l\xE0 ph\u1EA7n th\u01B0\u1EDFng c\u1EE7a ng\u01B0\u01A1i."
+      - "T\u1ED1t l\u1EAFm, sau n\xE0y l\xFAc \u0111\xF3i b\u1EE5ng, ng\u01B0\u01A1i
+        c\u0169ng c\xF3 th\u1EC3 h\xE1i qu\u1EA3 d\u1EA1i \u0111\u1EC3 \u0103n. Ta
+        s\u1EBD d\u1EA1y ng\u01B0\u01A1i ph\xE2n bi\u1EC7t lo\u1EA1i n\xE0o \u0103n
+        \u0111\u01B0\u1EE3c."
+      - "T\u1EB7ng ng\u01B0\u01A1i \xEDt s\xE1ch kinh nghi\u1EC7m, n\xF3 s\u1EBD
+        gi\xFAp \xEDch ng\u01B0\u01A1i \xEDt nhi\u1EC1u."
     title: "K\u1EF9 n\u0103ng sinh t\u1ED3n"
     description: "\u0110\u1EC3 chu\u1EA9n b\u1ECB cho chuy\u1EBFn \u0111i, tr\u01B0\u1EDFng
       l\xE3o d\u1EA1y cho ng\u01B0\u01A1i c\xE1ch t\xECm th\u1EE9c \u0103n. M\u1EE5c
       ti\xEAu t\xECm v\u1EC1 10 qu\u1EA3 t\xE1o ch\xEDn."
-    expBookReward: 4
+    expBookReward: 5
     coinsReward: 100
     goalType: 1
     goalID: 17
@@ -115,39 +158,79 @@ MonoBehaviour:
     startDialogues:
     - name: TheOldMan
       sentences:
-      - "Ng\u01B0\u1EDDi tr\u1EBB tu\u1ED5i! H\xE3y nh\u1EADn l\u1EA5y nhi\u1EC7m
-        v\u1EE5 n\xE0y."
+      - "Ti\u1EBFp theo, ta s\u1EBD d\u1EA1y ng\u01B0\u01A1i ch\u1EBF bi\u1EBFn m\u1EA5y
+        m\xF3n \u0103n hoang d\xE3. Ra ngo\xE0i m\u1EA1o hi\u1EC3m \u0111\xE2u th\u1EC3
+        ch\u1EC9 \u0103n qu\u1EA3 d\u1EA1i \u0111\u01B0\u1EE3c."
+      - "Mau ra \u0111\u1EA7u th\xF4n ki\u1EBFm v\u1EC1 \u0111\xE2y 10 c\xE1i \u0111\xF9i
+        g\xE0. \u0110i \u0111i."
+    - name: Sara
+      sentences:
+      - "V\xE2ng, ta \u0111i ngay \u0111\xE2y."
     finishDialogues:
     - name: TheOldMan
       sentences:
-      - "Nhanh nh\u01B0 v\u1EADy \u0111\xE3 ho\xE0n th\xE0nh nhi\u1EC7m v\u1EE5!
-        \u0110\xE2y l\xE0 ph\u1EA7n th\u01B0\u1EDFng c\u1EE7a ng\u01B0\u01A1i."
+      - "Oa, tr\u01B0\u1EDFng l\xE3o. \u0110\u1EA7u th\xF4n l\xE0 g\xE0 c\u1EE7a
+        th\xEDm Lisa, b\xE0 \u1EA5y \u0111ang \u0111u\u1ED5i ta kh\u1EAFp l\xE0ng."
+    - name: TheOldMan
+      sentences:
+      - "Kh\xE0 kh\xE0! B\u1ECB ng\u01B0\u1EDDi \u0111u\u1ED5i theo c\u0169ng chuy\u1EC7
+        th\u01B0\u1EDDng g\u1EB7p v\u1EDBi m\u1ED9t m\u1EA1o hi\u1EC3m gi\u1EA3.
+        Ng\u01B0\u01A1i ph\u1EA3i quen d\u1EA7n \u0111i th\xF4i!"
     title: "K\u1EF9 n\u0103ng sinh t\u1ED3n"
     description: "\u0110\u1EC3 chu\u1EA9n b\u1ECB cho chuy\u1EBFn \u0111i, tr\u01B0\u1EDFng
       l\xE3o d\u1EA1y cho ng\u01B0\u01A1i c\xE1ch t\xECm th\u1EE9c \u0103n. M\u1EE5c
       ti\xEAu t\xECm v\u1EC1 10 \u0111\xF9i g\xE0."
-    expBookReward: 4
-    coinsReward: 100
+    expBookReward: 6
+    coinsReward: 120
     goalType: 1
     goalID: 15
     requiredAmount: 10
     currentAmount: 0
   - isActive: 0
     startDialogues:
+    - name: Sara
+      sentences:
+      - "Tr\u01B0\u1EDFng l\xE3o, ng\xE0i c\xF3 chuy\u1EC7n g\xEC c\u1EA7n ta \u0111i
+        l\xE0m v\u1EADy?"
     - name: TheOldMan
       sentences:
-      - "Ng\u01B0\u1EDDi tr\u1EBB tu\u1ED5i! H\xE3y nh\u1EADn l\u1EA5y nhi\u1EC7m
-        v\u1EE5 n\xE0y."
+      - "Chuy\u1EC7n l\xE0 v\u1EADy. G\u1EA7n \u0111\xE2y c\xF3 1 to\xE1n c\u01B0\u1EDBp
+        \u0111\xE3 di chuy\u1EC3n \u0111\u1EBFn g\u1EA7n l\xE0ng ta. Ch\xFAng th\u01B0\u1EDDng
+        xuy\xEAn t\u1EDBi l\xE0m phi\u1EC1n d\xE2n l\xE0ng."
+      - "L\xE0ng ta ph\u1EA7n l\u1EDBn l\xE0 ng\u01B0\u1EDDi gi\xE0 v\xE0 tr\u1EBB
+        em. Nay th\u1EA5y th\xE2n th\u1EE7 ng\u01B0\u01A1i kh\xF4ng t\u1EC7, ta mu\u1ED1n
+        ng\u01B0\u01A1i \u0111u\u1ED5i b\u1ECDn ch\xFAng \u0111i."
+    - name: Sara
+      sentences:
+      - "C\xF3 chuy\u1EC7n n\xE0y sao? Tr\u01B0\u1EDFng l\xE3o y\xEAn t\xE2m, \u0111\u1EC3
+        \u0111\xE1m s\u01A1n t\u1EB7c n\xE0y cho ta."
+      - "Ta l\xEAn \u0111\u01B0\u1EDDng lu\xF4n \u0111\xE2y."
+    - name: TheOldMan
+      sentences:
+      - "T\u1EEB t\u1EEB \u0111\xE3. Bi\u1EBFt \u0111\u1ECBch bi\u1EBFt ta tr\u0103m
+        tr\u1EADn tr\u0103m th\u1EAFng. Ng\u01B0\u01A1i h\xE3y t\u1EDBi ch\xE2n n\xFAi
+        b\u1EAFt v\xE0i t\xEAn s\u01A1n t\u1EB7c \u0111\u1EC3 t\xECm hi\u1EC3u t\xECnh
+        h\xECnh tr\u01B0\u1EDBc."
+    - name: Sara
+      sentences:
+      - "\u0110\u01B0\u1EE3c r\u1ED3i! C\u1EE9 giao cho ta \u0111i."
     finishDialogues:
+    - name: Sara
+      sentences:
+      - "Ta \u0111\xE3 v\u1EC1 r\u1ED3i \u0111\xE2y. Theo \u0111i\u1EC1u tra, b\u1ECDn
+        s\u01A1n t\u1EB7c n\xE0y \u0111\xF3ng qu\xE2n tr\xEAn \u0111\u1EC9nh n\xFAi,
+        n\u01A1i \u0111\xE2y \u0111\u1ECBa h\xECnh hi\u1EC3m tr\u1EDF, l\u1EA1i canh
+        g\xE1c r\u1EA5t c\u1EA9n th\u1EADn."
     - name: TheOldMan
       sentences:
-      - "Nhanh nh\u01B0 v\u1EADy \u0111\xE3 ho\xE0n th\xE0nh nhi\u1EC7m v\u1EE5!
-        \u0110\xE2y l\xE0 ph\u1EA7n th\u01B0\u1EDFng c\u1EE7a ng\u01B0\u01A1i."
+      - "\u0110\u01B0\u1EE3c r\u1ED3i. Ta s\u1EBD ch\u1EC9 cho ng\u01B0\u01A1i ch\xFAt
+        kinh nghi\u1EC7m chi\u1EBFn \u0111\u1EA5u \u1EDF nh\u1EEFng n\u01A1i nh\u01B0
+        v\u1EADy. B\u1ECDn c\u01B0\u1EDBp giao c\u1EA3 cho ng\u01B0\u01A1i \u0111\u1EA5y."
     title: "Tr\u1EEB gian di\u1EC7t \xE1c"
     description: "K\u1EBB c\u01B0\u1EDBp ho\xE0nh h\xE0nh, l\xE0m h\u1EA1i ng\u01B0\u1EDDi
       d\xE2n. Mau ti\xEAu di\u1EC7t 20 t\xEAn s\u01A1n t\u1EB7c."
-    expBookReward: 4
-    coinsReward: 100
+    expBookReward: 10
+    coinsReward: 200
     goalType: 0
     goalID: 1
     requiredAmount: 20
@@ -156,40 +239,75 @@ MonoBehaviour:
     startDialogues:
     - name: TheOldMan
       sentences:
-      - "Ng\u01B0\u1EDDi tr\u1EBB tu\u1ED5i! H\xE3y nh\u1EADn l\u1EA5y nhi\u1EC7m
-        v\u1EE5 n\xE0y."
+      - "Ng\u01B0\u01A1i h\u1ECDc nhanh l\u1EAFm, th\xE2n th\u1EE7 nh\u01B0 v\u1EADy
+        h\u1EB3n l\xE0 \u0111\u1EE7 r\u1ED3i. Ch\u1EDF xong chuy\u1EC7n n\xE0y ta
+        s\u1EBD ch\u1EC9 cho ng\u01B0\u01A1i \u0111\u01B0\u1EDDng ra kh\u1ECFi th\xF4n."
+    - name: Sara
+      sentences:
+      - "V\u1EADy ta ph\u1EA3i l\xE0m nhanh ch\xFAt m\u1EDBi \u0111\u01B0\u1EE3c.
+        Tr\u01B0\u1EDFng l\xE3o, ch\u1EDD tin t\u1ED1t c\u1EE7a ta."
     finishDialogues:
+    - name: Sara
+      sentences:
+      - "Ta \u0111\xE3 \u0111\xE1nh l\xEAn t\u1EADn \u0111\u1EC9nh n\xFAi, b\u1ECDn
+        c\u01B0\u1EDBp \u0111\xE3 r\xFAt lui v\xE0o 1 hang \u0111\u1ED9ng kh\xE1
+        l\xE0 kh\u1EA3 nghi."
     - name: TheOldMan
       sentences:
-      - "Nhanh nh\u01B0 v\u1EADy \u0111\xE3 ho\xE0n th\xE0nh nhi\u1EC7m v\u1EE5!
-        \u0110\xE2y l\xE0 ph\u1EA7n th\u01B0\u1EDFng c\u1EE7a ng\u01B0\u01A1i."
+      - "L\xE0 h\u1EA7m ng\u1EE5c \xE0. Th\u1EF1c ra \u0111\xF3 l\xE0 \u0111\u01B0\u1EDDng
+        duy nh\u1EA5t ra v\xE0o th\xF4n ta. V\u1EADy ch\u1EAFc l\xE0 ch\xFAng \u0111\xE3
+        ch\u1EA1y kh\u1ECFi n\u01A1i n\xE0y r\u1ED3i."
+    - name: Sara
+      sentences:
+      - "Ah, \u0111\xF3 ch\xEDnh l\xE0 \u0111\u01B0\u1EDDng ra kh\u1ECFi th\xF4n
+        sao, tr\xF4ng \xE2m u l\u1EAFm."
+    - name: TheOldMan
+      sentences:
+      - "Tr\u01B0\u1EDBc kia c\u0169ng kh\xF4ng ph\u1EA3i nh\u01B0 v\u1EADy. Th\xF4i
+        kh\xF4ng n\xF3i chuy\u1EC7n n\xE0y n\u1EEFa. Ch\u1EDD l\xFAc n\xE0o ng\u01B0\u01A1i
+        mu\u1ED1n \u0111i ta s\u1EBD n\xF3i cho ng\u01B0\u01A1i."
     title: "\u0110\xE1nh nh\u1ECF xong \u0111\xE1nh l\u1EDBn"
     description: "\u0110\u1EC3 ch\u1EA5m d\u1EE9t n\u1EA1n tr\u1ED9m c\u01B0\u1EDBp,
       ph\u1EA3i ti\xEAu di\u1EC7t th\u1EE7 l\u0129nh s\u01A1n t\u1EB7c. Mau ti\xEAu
       di\u1EC7t 20 t\u01B0\u1EDBng c\u01B0\u1EDBp."
-    expBookReward: 4
-    coinsReward: 100
+    expBookReward: 20
+    coinsReward: 400
     goalType: 0
     goalID: 2
     requiredAmount: 20
     currentAmount: 0
   - isActive: 0
     startDialogues:
+    - name: Sara
+      sentences:
+      - "Tr\u01B0\u1EDFng l\xE3o v\u1EADy ti\u1EBFp theo ta ph\u1EA3i l\xE0m g\xEC?"
     - name: TheOldMan
       sentences:
-      - "Ng\u01B0\u1EDDi tr\u1EBB tu\u1ED5i! H\xE3y nh\u1EADn l\u1EA5y nhi\u1EC7m
-        v\u1EE5 n\xE0y."
+      - "Ng\u01B0\u01A1i h\xE3y v\xE0o h\u1EA7m ng\u1EE5c t\xECm hi\u1EC3u \u0111\u01B0\u1EDDng
+        \u0111i, d\u1ECDn d\u1EB9p ch\u01B0\u1EDBng ng\u1EA1i tr\u01B0\u1EDBc \u0111i."
+      - "Nh\u1EDB l\xE0 \u0111\u1EEBng c\xF3 v\xE0o t\u1EA7ng cu\u1ED1i \u0111\u1EA5y
+        nh\xE9."
     finishDialogues:
+    - name: Sara
+      sentences:
+      - "Ta \u0111\xE3 v\u1EC1 r\u1ED3i \u0111\xE2y. C\xF3 g\xEC \u1EDF t\u1EA7ng
+        cu\u1ED1i th\u1EBF tr\u01B0\u1EDFng l\xE3o?"
     - name: TheOldMan
       sentences:
-      - "Nhanh nh\u01B0 v\u1EADy \u0111\xE3 ho\xE0n th\xE0nh nhi\u1EC7m v\u1EE5!
-        \u0110\xE2y l\xE0 ph\u1EA7n th\u01B0\u1EDFng c\u1EE7a ng\u01B0\u01A1i."
+      - "C\xF2n nh\u1EDB ta \u0111\xE3 n\xF3i kh\xF4ng? Tr\u01B0\u1EDBc kia h\u1EA7m
+        ng\u1EE5c kh\xF4ng ph\u1EA3i nh\u01B0 v\u1EADy."
+      - "M\u1EA5y ch\u1EE5c n\u0103m tr\u01B0\u1EDBc, h\u1EA7m ng\u1EE5c b\u1ECB
+        1 t\xE0 linh chi\u1EBFm gi\u1EEF. N\xF3 ng\u1EE7 say \u1EDF t\u1EA7ng cu\u1ED1i
+        h\u1EA7m ng\u1EE5c."
+      - "G\u1EA7n \u0111\xE2y b\u1ECDn c\u01B0\u1EDBp ra v\xE0o, ta \u0111o\xE1n
+        t\xE0 linh \u0111\xE3 th\u1EE9c gi\u1EA5c. B\u1ECDn c\u01B0\u1EDBp s\u1EE3
+        l\xE0 \u0111\xE3 v\u0129nh vi\u1EC5n \u1EDF l\u1EA1i \u0111\xE2y."
     title: "Kh\xE1m ph\xE1 h\u1EA7m ng\u1EE5c"
     description: "S\u01A1 nh\u1EADp h\u1EA7m ng\u1EE5c, g\u1EB7p x\u01B0\u01A1ng
       kh\xF4 c\u1EA3n \u0111\u01B0\u1EDDng li\u1EC1n thu\u1EADn tay don d\u1EB9p
       m\u1ED9t ch\xFAt."
-    expBookReward: 4
-    coinsReward: 100
+    expBookReward: 40
+    coinsReward: 800
     goalType: 0
     goalID: 5
     requiredAmount: 20
@@ -198,19 +316,38 @@ MonoBehaviour:
     startDialogues:
     - name: TheOldMan
       sentences:
-      - "Ng\u01B0\u1EDDi tr\u1EBB tu\u1ED5i! H\xE3y nh\u1EADn l\u1EA5y nhi\u1EC7m
-        v\u1EE5 n\xE0y."
+      - "H\u1EA7m ng\u1EE5c l\xE0 \u0111\u01B0\u1EDDng ra duy nh\u1EA5t. V\u1EADy
+        gi\u1EDD ch\u1EC9 c\xF3 c\xE1ch ch\u1EDD t\xE0 linh ng\u1EE7 l\u1EA1i ho\u1EB7c
+        ti\xEAu di\u1EC7t n\xF3, ng\u01B0\u01A1i m\u1EDBi ra ngo\xE0i \u0111\u01B0\u1EE3c."
+    - name: Sara
+      sentences:
+      - "Ch\u1EDD \u0111\u1EE3i th\xEC kh\xF4ng bi\u1EBFt \u0111\u1EBFn l\xFAc n\xE0o.
+        Ta s\u1EBD \u0111i ti\xEAu di\u1EC7t n\xF3."
+    - name: TheOldMan
+      sentences:
+      - "V\u1EADy ng\u01B0\u01A1i ph\u1EA3i c\u1EA9n th\u1EADn \u0111\u1EA5y. Th\u1EF1c
+        l\u1EF1c t\xE0 linh r\u1EA5t l\xE0 m\u1EA1nh."
+    - name: Sara
+      sentences:
+      - "Ta bi\u1EBFt r\u1ED3i. Ta s\u1EBD c\u1EA9n th\u1EADn."
     finishDialogues:
     - name: TheOldMan
       sentences:
-      - "Nhanh nh\u01B0 v\u1EADy \u0111\xE3 ho\xE0n th\xE0nh nhi\u1EC7m v\u1EE5!
-        \u0110\xE2y l\xE0 ph\u1EA7n th\u01B0\u1EDFng c\u1EE7a ng\u01B0\u01A1i."
+      - "H\u1EA7m ng\u1EE5c \u0111\xE3 th\xF4ng, ta c\u0169ng kh\xF4ng c\xF2n g\xEC
+        \u0111\u1EC3 d\u1EA1y ng\u01B0\u01A1i n\u1EEFa. \u0110\xE3 \u0111\u1EBFn
+        l\xFAc ng\u01B0\u01A1i ra th\u1EBF gi\u1EDBi b\xEAn ngo\xE0i r\u1ED3i."
+      - "L\xEAn \u0111\u01B0\u1EDDng b\u1EA3o tr\u1ECDng."
+    - name: Sara
+      sentences:
+      - "Ta \u0111i ch\xE0o h\u1ECFi m\u1ECDi ng\u01B0\u1EDDi 1 ch\xFAt. Ng\xE0i
+        c\u1EE9 y\xEAn t\xE2m \u0111i, ta s\u1EBD s\u1EDBm quay v\u1EC1 th\u0103m
+        m\u1ECDi ng\u01B0\u1EDDi."
     title: Bringer Of Death
     description: "\u0110\u1EC3 \u0111\u1EA3 th\xF4ng h\u1EA7m ng\u1EE5c c\u1EA7n
       \u0111\xE1nh b\u1EA1i Bringer Of Death, t\xE0 linh chi\u1EBFm gi\u1EEF c\u1EEDa
       ra c\u1EE7a h\u1EA7m ng\u1EE5c."
-    expBookReward: 4
-    coinsReward: 100
+    expBookReward: 80
+    coinsReward: 1000
     goalType: 0
     goalID: 6
     requiredAmount: 1

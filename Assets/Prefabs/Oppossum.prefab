@@ -198,7 +198,7 @@ MonoBehaviour:
   isDeath: 0
   timeHurt: 0.5
   isFitter: 0
-  timeFitter: 1.5
+  timeFitter: 1.3
   detectPlayer: 0
   canAttack: 0
   isAttack: 0
@@ -216,6 +216,7 @@ MonoBehaviour:
     amount: 0
     typeInt: 3
     price: 0
+  spawnInt: 1
 --- !u!95 &3744245642899799144
 Animator:
   serializedVersion: 3

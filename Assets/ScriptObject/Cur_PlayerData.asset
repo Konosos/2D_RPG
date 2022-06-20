@@ -18,8 +18,8 @@ MonoBehaviour:
   save_Level: 1
   save_ExpLevelUp: 1000
   save_CurExp: 0
-  save_Coins: 10000
-  save_CurSceneIndex: 3
+  save_Coins: 100
+  save_CurSceneIndex: 1
   save_isNextScene: 1
   saveEquip:
   - itemType: 0

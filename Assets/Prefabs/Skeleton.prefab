@@ -482,7 +482,7 @@ MonoBehaviour:
   isDeath: 0
   timeHurt: 0.5
   isFitter: 0
-  timeFitter: 1.5
+  timeFitter: 1
   detectPlayer: 0
   canAttack: 0
   isAttack: 0
