@@ -24,6 +24,10 @@ public class MenuManager : MonoBehaviour
         ResetQuestList();
         StartCoroutine(LoadSceneManager.instance.LoadAsync(_map1));
     }
+    public void QuitButton()
+    {
+        Application.Quit();
+    }
     private void ResetPlayerData()
     {
         cur_PlayerData.save_MaxHealth=startPlayerData.save_MaxHealth;

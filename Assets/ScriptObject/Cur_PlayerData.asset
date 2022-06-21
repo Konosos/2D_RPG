@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cur_PlayerData
   m_EditorClassIdentifier: 
   save_MaxHealth: 200
-  save_CurHealth: 0
+  save_CurHealth: 200
   save_Atk: 40
   save_Level: 1
   save_ExpLevelUp: 1000

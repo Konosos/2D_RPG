@@ -290,4 +290,10 @@ public class PlayerUI : MonoBehaviour
         optionPanel.SetActive(false);
         Time.timeScale=1f;
     }
+    public void MainMenuButton()
+    {
+        Time.timeScale=1f;
+        playerControl.playerChangeScene.SaveData();
+        StartCoroutine(LoadSceneManager.instance.LoadAsync(0));
+    }
 }

@@ -13,17 +13,6 @@ public class PlayerController : MonoBehaviour
     public PlayerUI playerUI;
     public PlayerEquipSystem playerEquip;
     public NPC_Dialogue npc_Dialogue;
-    // Start is called before the first frame update
-    /*void Awake()
-    {
-        playerMovement=GetComponent<PlayerMov>();
-        playerAnimation=GetComponent<PlayerAnimation>();
-        playerAttack=GetComponent<PlayerAttack>();
-        playerInfor=GetComponent<PlayerInformation>();
-        playerInventory=GetComponent<PlayerInventorySystem>();
-        levelSystem=GetComponent<LevelSystem>();
-        playerUI=GetComponent<PlayerUI>();
-        playerEquip=GetComponent<PlayerEquipSystem>();
-        npc_Dialogue=GetComponent<NPC_Dialogue>();
-    }*/
+    public PlayerChangeScene playerChangeScene;
+    
 }
