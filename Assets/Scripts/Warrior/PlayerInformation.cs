@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInformation : Information
 {
@@ -10,9 +11,27 @@ public class PlayerInformation : Information
 
     [SerializeField]private PlayerController playerControl;
 
+    protected override void Start()
+    {
+        
+    }
     protected override void Die()
     {
-        Debug.Log("Player Die!!!");
+        OfDeath();
+        playerControl.playerChangeScene.SaveData();
+        StartCoroutine(LoadSceneManager.instance.LoadAsync(1));
+    }
+    private void OfDeath()
+    {
+        int _exp=playerControl.levelSystem.cur_Exp;
+        if(_exp>_exp/5)
+        {
+            playerControl.levelSystem.cur_Exp-=playerControl.levelSystem.cur_Exp/5;
+        }
+        else
+        {
+            playerControl.levelSystem.cur_Exp=0;
+        }
     }
     public void UpdateInfor()
     {

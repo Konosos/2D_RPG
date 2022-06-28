@@ -32,6 +32,7 @@ public class LevelSystem : MonoBehaviour
         expLevelUp+=expLevelUp/10;
         playerControl.playerInfor.atk+=playerControl.playerInfor.atk/10;
         playerControl.playerInfor.maxHealth+=playerControl.playerInfor.maxHealth/10;
+        playerControl.playerInfor.UpdateInfor();
         playerControl.playerUI.UpdateLevel(cur_Level);
     }
 }

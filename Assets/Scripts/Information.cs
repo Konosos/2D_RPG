@@ -24,14 +24,12 @@ public class Information : MonoBehaviour
     public bool isFitter=false;
     public float timeFitter=1.5f;
     protected float cur_TimeFitter=0f;
-    private void Awake()
-    {
-        cur_Health=maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
-    }
+    
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        cur_Health=maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(cur_Health);
     }
     protected virtual void Update()

@@ -38,4 +38,8 @@ MonoBehaviour:
     amount: 0
     typeInt: 0
     price: 0
-  saveInven: []
+  saveInven:
+  - itemType: 17
+    amount: 3
+    typeInt: 17
+    price: 0

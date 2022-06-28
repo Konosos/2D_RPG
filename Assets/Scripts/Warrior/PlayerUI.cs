@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerUI : MonoBehaviour
 {
@@ -204,7 +205,7 @@ public class PlayerUI : MonoBehaviour
     {
         switch(item.itemType)
         {
-            default:
+            //default:
             case Item.ItemType.HealthPotion: 
 
             playerControl.playerInfor.AddHP(20);   
