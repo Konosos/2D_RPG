@@ -18,6 +18,8 @@ public class PlayerInformation : Information
     protected override void Die()
     {
         OfDeath();
+        cur_Health=100;
+        isDeath=false;
         playerControl.playerChangeScene.SaveData();
         StartCoroutine(LoadSceneManager.instance.LoadAsync(1));
     }
